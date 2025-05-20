@@ -21,7 +21,7 @@ import lombok.NoArgsConstructor;
 
 
 public class Tienda {
-    @JsonIgnore
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(unique = true)

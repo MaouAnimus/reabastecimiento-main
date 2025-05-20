@@ -37,6 +37,5 @@ public class EncargadoTienda {
 
     @Column(length = 150, nullable = false)
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-    private String password;
-    
+    private String password;   
 }

@@ -18,10 +18,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 
-
 @RestController
-
-@RequestMapping("/api/encargado")
+@RequestMapping("/api/encargados")
 public class EncargadoTiendaController {
     @Autowired
     private EncargadoTService encargadoservice;
@@ -56,4 +54,16 @@ public class EncargadoTiendaController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
+
+    @GetMapping("/{id_encargado}")
+    public ResponseEntity<EncargadoTienda> getById(@PathVariable int id_encargado) {
+        EncargadoTienda et = encargadoservice.findById(id_encargado);
+        if (et != null) {
+            return new ResponseEntity<>(et, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
+
 }

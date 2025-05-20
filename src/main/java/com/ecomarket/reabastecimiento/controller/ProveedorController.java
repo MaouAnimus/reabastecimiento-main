@@ -1,6 +1,7 @@
 package com.ecomarket.reabastecimiento.controller;
 
 import org.springframework.web.bind.annotation.RestController;
+
 import com.ecomarket.reabastecimiento.model.Proveedor;
 import com.ecomarket.reabastecimiento.service.ProveedorService;
 
@@ -50,5 +51,17 @@ public class ProveedorController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
+
+    @GetMapping("/{id_prov}")
+    public ResponseEntity<Proveedor> getById(@PathVariable int id_prov) {
+        Proveedor prov = proveedorService.findById(id_prov);
+        if (prov != null) {
+            return new ResponseEntity<>(prov, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
+    
     
 }

@@ -25,7 +25,7 @@ public class Solreabastecimiento {
     private int id_solicitud;
 
     @ManyToOne
-    @JoinColumn(name = "id_proveedor", nullable = false)
+    @JoinColumn(name = "id_prov", nullable = false)
     private Proveedor proveedor;
     
     @ManyToOne
@@ -38,4 +38,10 @@ public class Solreabastecimiento {
 
     @Column(nullable = false)
     private boolean estado_solicitud;
+    
+    @ManyToOne
+    @JoinColumn(name = "producto", nullable = false)
+    private Producto producto;
+
+    
 }

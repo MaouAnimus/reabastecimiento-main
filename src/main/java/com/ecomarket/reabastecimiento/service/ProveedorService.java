@@ -23,14 +23,19 @@ public class ProveedorService {
         return proveedorRepository.findAll();    
     }
 
-    public Proveedor updateById(int id, Proveedor proveedor) {
-        Proveedor provExist = proveedorRepository.findById(id);
+    public Proveedor updateById(int id_prov, Proveedor proveedor) {
+        Proveedor provExist = proveedorRepository.findById(id_prov);
         if (proveedor.getNom_prov() != null) {
             provExist.setNom_prov(proveedor.getNom_prov());
             proveedorRepository.save(provExist);
             return provExist;
         }
         return null;
+    }
+
+    public Proveedor findById(int id_prov) {
+        // TODO Auto-generated method stub
+        return proveedorRepository.findById(id_prov);    
     }
     
 }

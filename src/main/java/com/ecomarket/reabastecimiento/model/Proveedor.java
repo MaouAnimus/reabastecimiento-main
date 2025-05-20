@@ -20,7 +20,6 @@ import lombok.NoArgsConstructor;
 @Table(name = "proveedor")
 
 public class Proveedor {
-    @JsonIgnore
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(unique = true)

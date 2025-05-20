@@ -2,6 +2,7 @@ package com.ecomarket.reabastecimiento.controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
 import com.ecomarket.reabastecimiento.model.Logistica;
 import com.ecomarket.reabastecimiento.service.LogisticaService;
 
@@ -46,6 +47,16 @@ public class LogisticaController {
         @PutMapping("/actualizar/{id}")
         public ResponseEntity<Logistica> updateById(@PathVariable int id, @RequestBody Logistica logistica) {
         Logistica log = logisticaService.updateById(id, logistica);
+        if (log != null) {
+            return new ResponseEntity<>(log, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
+    @GetMapping("/{id_logistica}")
+    public ResponseEntity<Logistica> getById(@PathVariable int id_logistica) {
+        Logistica log = logisticaService.findById(id_logistica);
         if (log != null) {
             return new ResponseEntity<>(log, HttpStatus.OK);
         } else {

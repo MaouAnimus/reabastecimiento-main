@@ -19,4 +19,6 @@ public interface EncargadoTRepository extends JpaRepository<EncargadoTienda, Int
     EncargadoTienda findById(int id_encargado);
 
     List<EncargadoTienda> findAll();
+
+    
 }

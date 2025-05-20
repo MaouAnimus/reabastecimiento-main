@@ -29,5 +29,6 @@ public class Producto {
     private String nombre_producto;
 
     @Column(nullable = false)
-    private int stock_producto;
+    private int cantidad_producto;
+    
 }

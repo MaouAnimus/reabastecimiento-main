@@ -15,4 +15,5 @@ public interface ProveedorRepository extends JpaRepository<Proveedor, Integer> {
     @SuppressWarnings("unchecked")
     Proveedor save(Proveedor proveedor);
     
-    Proveedor findById(int id_proveedor);}
+    Proveedor findById(int id_prov);
+}
