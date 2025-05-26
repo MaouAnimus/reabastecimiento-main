@@ -18,12 +18,10 @@ public class ProductoService {
     }
 
     public Producto findById(int id_producto) {
-        // TODO Auto-generated method stub
         return productoRepository.findById(id_producto);
     }
 
     public Producto crear_producto(Producto producto) {
-        // TODO Auto-generated method stub
         return productoRepository.save(producto);
     }
     
