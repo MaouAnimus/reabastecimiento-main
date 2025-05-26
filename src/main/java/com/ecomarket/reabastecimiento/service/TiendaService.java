@@ -15,12 +15,10 @@ public class TiendaService {
     
 
     public List<Tienda> findAll() {
-        // TODO Auto-generated method stub
         return tiendaRepository.findAll();
     }
 
     public Tienda crear_tienda(Tienda tienda) {
-        // TODO Auto-generated method stub
         return tiendaRepository.save(tienda);
     }
     

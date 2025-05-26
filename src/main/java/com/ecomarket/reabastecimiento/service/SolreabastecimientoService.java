@@ -22,7 +22,6 @@ public class SolreabastecimientoService {
     }
 
     public List<Solreabastecimiento> findAll() {
-        // TODO Auto-generated method stub
         return solreabastecimientoRepository.findAll();    
     }
     

@@ -14,12 +14,10 @@ public class ProveedorService {
     private ProveedorRepository proveedorRepository;
 
     public Proveedor crear_proveedor(Proveedor proveedor) {
-        // TODO Auto-generated method stub
         return proveedorRepository.save(proveedor);
     }
 
     public List<Proveedor> findAll() {
-        // TODO Auto-generated method stub
         return proveedorRepository.findAll();    
     }
 
