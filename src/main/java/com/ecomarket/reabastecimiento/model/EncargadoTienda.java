@@ -21,6 +21,7 @@ import lombok.NoArgsConstructor;
 
 public class EncargadoTienda {
     @Id
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(unique=true)
     private int id_encargado;

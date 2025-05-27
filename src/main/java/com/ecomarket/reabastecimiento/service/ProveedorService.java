@@ -32,7 +32,6 @@ public class ProveedorService {
     }
 
     public Proveedor findById(int id_prov) {
-        // TODO Auto-generated method stub
         return proveedorRepository.findById(id_prov);    
     }
     

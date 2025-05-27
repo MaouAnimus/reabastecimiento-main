@@ -15,5 +15,5 @@ public interface TiendaRepository extends JpaRepository<Tienda, Integer> {
     @SuppressWarnings("unchecked")
     Tienda save(Tienda tienda);
 
-    
+    Tienda findById(int id_tienda);
 }

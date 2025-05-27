@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 
 @RestController
-@RequestMapping("/api/encargados")
+@RequestMapping("/api/encargado")
 public class EncargadoTiendaController {
     @Autowired
     private EncargadoTService encargadoservice;

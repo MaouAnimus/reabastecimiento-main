@@ -1,5 +1,7 @@
 package com.ecomarket.reabastecimiento.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -19,7 +21,9 @@ import lombok.NoArgsConstructor;
 @Table(name = "producto")
 public class Producto {
     @Id
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(unique = true)
     private int id_producto;
 
     @Column(length = 15, nullable = false, unique = true)

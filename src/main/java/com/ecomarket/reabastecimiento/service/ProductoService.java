@@ -24,5 +24,20 @@ public class ProductoService {
     public Producto crear_producto(Producto producto) {
         return productoRepository.save(producto);
     }
+
+    public Producto updateById(int id_producto, Producto producto) {
+        Producto prodExist = productoRepository.findById(id_producto);
+        if (prodExist != null) {
+            if (producto.getCodigo_producto() != null) 
+                prodExist.setCodigo_producto(producto.getCodigo_producto());
+            if (producto.getNombre_producto() != null) 
+                prodExist.setNombre_producto(producto.getNombre_producto());
+            if (producto.getCantidad_producto() > 0) 
+                prodExist.setCantidad_producto(producto.getCantidad_producto());
+            productoRepository.save(prodExist);
+            return prodExist;
+        }
+        return null;    
+    }
     
 }

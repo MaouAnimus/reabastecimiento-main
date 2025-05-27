@@ -24,5 +24,8 @@ public class SolreabastecimientoService {
     public List<Solreabastecimiento> findAll() {
         return solreabastecimientoRepository.findAll();    
     }
+
     
+
+
 }

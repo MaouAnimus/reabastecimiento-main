@@ -14,6 +14,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+
+
 
 
 @RestController
@@ -37,5 +42,24 @@ public class TiendaController {
         return new ResponseEntity<>(tiend, HttpStatus.CREATED);
     }
 
-
+    @GetMapping("/{id_tienda}")
+    public ResponseEntity<Tienda> getById(@RequestParam int id_tienda) {
+        Tienda tiend = tiendaService.findById(id_tienda);
+        if (tiend != null) {
+            return new ResponseEntity<>(tiend, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+    
+    @PutMapping("actualizar/{id_tienda}")
+    public ResponseEntity<Tienda> updateById(@PathVariable int id, @RequestBody Tienda tienda) {
+        Tienda tiend = tiendaService.updateById(id, tienda);
+        if (tiend != null) {
+            return new ResponseEntity<>(tiend, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+    
 }
